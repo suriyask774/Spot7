@@ -1,0 +1,53 @@
+
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    .navbar {
+      background: linear-gradient(90deg, #4b6cb7, #182848); /* Smooth gradient */
+      padding: 1rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      font-size: 25px;
+    }
+    .navbar-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .navbar-links li a:hover {
+    color: #ffcc00; /* gold on hover */
+  }
+    .checkout-section {
+      padding: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form input, form button, form textarea {
+      width: 93%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    #cart-summary ul {
+      list-style: none;
+      padding: 0;
+    }
+    #cart-summary li {
+      margin: 5px 0;
+    }

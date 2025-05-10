@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spot7 - Toys</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo2.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="categories.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">Spot7 - <span class="titlepage">Toys</span></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="navbar-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  
+    <!-- 🟢 Move the menu here INSIDE the navbar -->
+    <div class="navbar-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+  
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search Toys..." onkeyup="filterProducts()"  style="font-family: 'josefin Sans',sans-serif;"/>
+  </section>
+
+  <section class="product-grid" id="productGrid">
+    <div class="product-card" data-name="JCB toy for kids">
+      <img src="assets/model32.jpg" alt="JCB toy for kids" />
+      <h3>JCB toy for kids</h3>
+      <p>₹400</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Plastic bat with ball for kids">
+      <img src="assets/model33.jpg" alt="Plastic bat with ball for kids" />
+      <h3>Plastic bat with ball for kids</h3>
+      <p>₹700</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="helicopter toy with wings">
+      <img src="assets/model34.jpg" alt="helicopter toy with wings" />
+      <h3>helicopter toy with wings</h3>
+      <p>₹1200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Toy boat for kids">
+      <img src="assets/model35.jpg" alt="Toy boat for kids" />
+      <h3>Toy boat for kids</h3>
+      <p>₹800</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Toy truck for kids">
+      <img src="assets/model36.jpg" alt="Toy truck for kids" />
+      <h3>Toy truck for kids</h3>
+      <p>₹200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Rocket toy for kids">
+      <img src="assets/model37.jpg" alt="Rocket toy for kids" />
+      <h3>Rocket toy for kids</h3>
+      <p>₹999</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="chess board for kids">
+      <img src="assets/model38.jpg" alt="chess board for kids" />
+      <h3>chess board for kids</h3>
+      <p>₹599</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Toy car for kids">
+      <img src="assets/model39.jpg" alt="Toy car for kids" />
+      <h3>Toy car for kids</h3>
+      <p>₹200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Rummy cards for kids">
+      <img src="assets/model40.jpg" alt="Rummy cards for kids" />
+      <h3>Rummy cards for kids</h3>
+      <p>₹200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Teddy bear for kids">
+      <img src="assets/model5.jpg" alt="Teddy bear for kids" />
+      <h3>Teddy bear for kids</h3>
+      <p>₹300</p>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+  <div class="brand-container">
+    <div class="brand">
+      <p>&copy; Spot7 Inc.</p>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Spot7. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="categories.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spot7 - Groceries</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo2.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="categories.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">Spot7 - <span class="titlepage">Groceries</span></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="navbar-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  
+    <!-- 🟢 Move the menu here INSIDE the navbar -->
+    <div class="navbar-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+  
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search Groceries..." onkeyup="filterProducts()"  style="font-family: 'josefin Sans',sans-serif;"/>
+  </section>
+
+  <section class="product-grid" id="productGrid">
+    <div class="product-card" data-name="Fresh Pumkin 5kg">
+      <img src="assets/model41.jpg" alt="Fresh Pumkin 5kg" />
+      <h3>Fresh Pumkin 5kg </h3>
+      <p>₹500</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Tomato 1kg">
+      <img src="assets/model42.jpg" alt="Tomato 1kg" />
+      <h3>Tomato 1kg</h3>
+      <p>₹60</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Almond 1kg">
+      <img src="assets/model43.jpg" alt="Almond 1kg" />
+      <h3>Almond 1kg</h3>
+      <p>₹600</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Beet root 1kg">
+      <img src="assets/model44.jpg" alt="Beet root 1kg" />
+      <h3>Beet root 1kg</h3>
+      <p>₹120</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Carrot 1kg">
+      <img src="assets/model45.jpg" alt="Carrot 1kg" />
+      <h3>Carrot 1kg</h3>
+      <p>₹120</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Chilli powder 1kg">
+      <img src="assets/model46.jpg" alt="Chilli powder 1kg" />
+      <h3>Chilli powder 1kg</h3>
+      <p>₹500</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Brinjal 1kg">
+      <img src="assets/model47.jpg" alt="Brinjal 1kg" />
+      <h3>Brinjal 1kg</h3>
+      <p>₹100</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Coriander leaf 1/4 kg">
+      <img src="assets/model48.jpg" alt="Coriander leaf 1/4 kg" />
+      <h3>Coriander leaf 200g</h3>
+      <p>₹50</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Potato 1kg">
+      <img src="assets/model49.jpg" alt="Potato 1kg" />
+      <h3>Potato 1kg</h3>
+      <p>₹200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Turmeric powder 200g">
+      <img src="assets/model50.jpg" alt="Turmeric powder 200g" />
+      <h3>Turmeric powder 200g</h3>
+      <p>₹100</p>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+  <div class="brand-container">
+    <div class="brand">
+      <p>&copy; Spot7 Inc.</p>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Spot7. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="categories.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cart - Spot7</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo2.jpg">
+  <link rel="stylesheet" href="cart.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-logo">Spot7</div>
+    <ul class="navbar-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="home.html">Shop</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Cart Section -->
+  <section class="cart-section">
+    <h1>Your Cart</h1>
+    
+    <div class="cart-container" id="cart-items-container">
+      <!-- Cart items will be dynamically injected here -->
+    </div>
+
+    <div class="cart-summary">
+      <h2>Order Summary</h2>
+      <p>Total Items: <span id="total-items">0</span></p>
+      <p><strong>Total Price: ₹<span id="total-price">0</span></strong></p>
+      <a href="checkout.html">
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </a>      
+    </div>
+  </section>
+
+  <script>
+    function setupCart() {
+      const cartContainer = document.getElementById('cart-items-container');
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+      if (cart.length === 0) {
+        cartContainer.innerHTML = `
+          <div class="empty-cart">
+            <h2>Your cart is empty 🛒</h2>
+            <button onclick="window.location.href='home.html'">Continue Shopping</button>
+          </div>
+        `;
+        return;
+      }
+    
+      cartContainer.innerHTML = ''; // Clear first
+    
+      cart.forEach((item) => {
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.classList.add('cart-item');
+        cartItemDiv.innerHTML = `
+          <img src="${item.img}" alt="Product Image">
+          <div class="item-details">
+            <h2>${item.productName}</h2>
+            <p>Price: ₹${item.price}</p>
+            <div class="quantity-controls">
+              <button class="minus-btn">-</button>
+              <span class="quantity">${item.quantity}</span>
+              <button class="plus-btn">+</button>
+            </div>
+          </div>
+          <div class="remove-btn">
+            <button class="remove-btn-item">Remove</button>
+          </div>
+        `;
+        
+        cartContainer.appendChild(cartItemDiv);
+    
+        const minusBtn = cartItemDiv.querySelector('.minus-btn');
+        const plusBtn = cartItemDiv.querySelector('.plus-btn');
+        const quantitySpan = cartItemDiv.querySelector('.quantity');
+        const removeBtn = cartItemDiv.querySelector('.remove-btn-item');
+    
+        // Decrease quantity
+        minusBtn.addEventListener('click', () => {
+          const updatedCart = JSON.parse(localStorage.getItem('cart')) || [];
+          const foundItem = updatedCart.find(i => i.productName === item.productName);
+          if (foundItem && foundItem.quantity > 1) {
+            foundItem.quantity--;
+            quantitySpan.textContent = foundItem.quantity;
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            updateTotal();
+          }
+        });
+    
+        // Increase quantity
+        plusBtn.addEventListener('click', () => {
+          const updatedCart = JSON.parse(localStorage.getItem('cart')) || [];
+          const foundItem = updatedCart.find(i => i.productName === item.productName);
+          if (foundItem) {
+            foundItem.quantity++;
+            quantitySpan.textContent = foundItem.quantity;
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            updateTotal();
+          }
+        });
+    
+        // Remove item
+        removeBtn.addEventListener('click', () => {
+          let updatedCart = JSON.parse(localStorage.getItem('cart')) || [];
+          updatedCart = updatedCart.filter(i => i.productName !== item.productName);
+          localStorage.setItem('cart', JSON.stringify(updatedCart));
+          cartItemDiv.remove();
+          updateTotal();
+          checkCartEmpty();
+        });
+      });
+    
+      updateTotal();
+    }
+    
+    function updateTotal() {
+      let totalItems = 0;
+      let totalPrice = 0;
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+      cart.forEach(item => {
+        totalItems += item.quantity;
+        totalPrice += item.price * item.quantity;
+      });
+    
+      document.getElementById('total-items').textContent = totalItems;
+      document.getElementById('total-price').textContent = totalPrice;
+    }
+    
+    function checkCartEmpty() {
+      const cartContainer = document.getElementById('cart-items-container');
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        cartContainer.innerHTML = `
+          <div class="empty-cart">
+            <h2>Your cart is empty 🛒</h2>
+            <button onclick="window.location.href='home.html'">Continue Shopping</button>
+          </div>
+        `;
+      }
+    }
+    
+    window.onload = () => {
+      setupCart();
+    };
+    </script>
+    </body>
+</html>

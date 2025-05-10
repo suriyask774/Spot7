@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spot7 - Electronics</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo2.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="categories.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">Spot7 - <span class="titlepage">Electronics</span></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="navbar-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  
+    <!-- 🟢 Move the menu here INSIDE the navbar -->
+    <div class="navbar-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+  
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search electronics..." onkeyup="filterProducts()"  style="font-family: 'josefin Sans',sans-serif;"/>
+  </section>
+
+  <section class="product-grid" id="productGrid">
+    <div class="product-card" data-name="Bluetooth Speaker">
+      <img src="assets/model9.jpg" alt="Bluetooth Speaker" />
+      <h3>Bluetooth Speaker</h3>
+      <p>₹1200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Wired keyboard">
+      <img src="assets/model68.jpg" alt="Wired keyboard" />
+      <h3>Wired keyboard</h3>
+      <p>₹2500</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Iphone 15 pro">
+      <img src="assets/model69.jpg" alt="Iphone 15 pro" />
+      <h3>Iphone 15 pro</h3>
+      <p>₹80000</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="charge cable for iphone">
+      <img src="assets/model70.jpg" alt="charge cable for iphone" />
+      <h3>charge cable for iphone</h3>
+      <p>₹2200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="I Mac book air with M1 chip">
+      <img src="assets/model71.jpg" alt="I Mac book air with M1 chip" />
+      <h3>I Mac book air with M1 chip</h3>
+      <p>₹100000</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Sandisk Pendrive 32gb storage">
+      <img src="assets/model72.jpg" alt="Sandisk Pendrive 32gb storage" />
+      <h3>Sandisk Pendrive 32gb storage</h3>
+      <p>₹999</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Power Bank for mobiles">
+      <img src="assets/model73.jpg" alt="Power Bank for mobiles" />
+      <h3>Power Bank for mobiles</h3>
+      <p>₹2500</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Apple airpods">
+      <img src="assets/model74.jpg" alt="Apple airpods" />
+      <h3>Apple airpods</h3>
+      <p>₹20000</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Boat smart watch">
+      <img src="assets/model75.jpg" alt="Boat smart watch" />
+      <h3>Boat smart watch</h3>
+      <p>₹4200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Samsung airpods">
+      <img src="assets/model76.jpg" alt="Samsung airpods" />
+      <h3>Samsung airpods</h3>
+      <p>₹6000</p>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+  <div class="brand-container">
+    <div class="brand">
+      <p>&copy; Spot7 Inc.</p>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Spot7. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="categories.js"></script>
+</body>
+</html>

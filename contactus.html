@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Spot7</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo2.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Exo+2:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poetsen+One&display=swap" rel="stylesheet">
+ <style>
+    body {
+      margin: 0;
+      font-family: 'Josefin Sans', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4b6cb7, #182848);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      font-family: 'Exo 2', sans-serif;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .contact-info, .contact-form {
+      flex: 1 1 300px;
+    }
+
+    .contact-info h2, .contact-form h2 {
+      color: #182848;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .form-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Josefin Sans',sans-serif;
+}
+form {
+    display: grid;
+    grid-gap: 10px;
+}
+label {
+    font-weight: bold;
+    font-size: large;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: 'Josefin Sans',sans-serif;
+}
+.form-button {
+    background-color: rgb(1, 20, 80);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Josefin Sans',sans-serif;
+    font-size: 15px;
+}
+.form-button:hover {
+    background-color: #000985;
+}
+#formStatus {
+    margin-top: 10px;
+    color: #333;
+}
+.form-container-whole{
+   padding-top: 10px;
+   font-family: 'Josefin Sans',sans-serif;
+}
+.form-name{
+    text-align: center;
+    color: rgb(1, 20, 80);
+    font-family: 'Josefin Sans',sans-serif;
+}
+.input-form{
+    font-size: 18px;
+    color:  rgb(1, 20, 80);
+    font-weight: 600;
+}
+
+    footer {
+      margin-top: 40px;
+      background-color: #182848;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+    <p style="margin-top: 8px; font-size: 1.2rem;">We'd love to hear from you</p>
+  </header>
+
+  <div class="container">
+    <div class="contact-section">
+      <div class="contact-info">
+        <h2>Spot7</h2>
+        <p><strong>Headquaters:</strong> Salem Steel Plant, Salem, India</p>
+        <p><strong>Phone:</strong> +91 8667290105</p>
+        <p><strong>Email:</strong> suriyask774@gmail.com</p>
+        <p><strong>Working Hours:</strong> Mon - Sun: 9AM - 6PM</p>
+      </div>
+
+
+      <div class="form-container-whole">
+        <div class="form-container">
+            <h2 class="form-name">Contact Form</h2>
+            <form method="POST" id="form">
+                <input type="hidden" name="access_key" value="c94438a9-d807-44ae-a6f9-2559c0b3e2d0">
+                <label class="form-content-name">Name</label>
+                <input type="text" name="name" required placeholder="Name" class="input-form">
+                <label class="form-content-name">Email</label>
+                <input type="email" name="email" required placeholder="Email" class="input-form">
+                <label class="form-content-name">Message</label>
+                <textarea name="message" required placeholder="Message" class="input-form"></textarea>
+                <button type="submit" class="form-button">Submit</button>
+                <div id="result"></div>
+            </form>
+        </div>
+    </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Spot7. All rights reserved.
+  </footer>
+
+   <script src="https://web3forms.com/client/script.js" async defer></script>
+<script>
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+        result.innerHTML = "Please wait..."
+
+        fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async(response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = "Form submitted successfully";
+                } else {
+                    console.log(response);
+                    result.innerHTML = json.message;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.innerHTML = "Something went wrong!";
+            })
+            .then(function() {
+                form.reset();
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 3000);
+            });
+    });
+
+
+  </script>
+
+</body>
+</html>

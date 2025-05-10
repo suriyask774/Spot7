@@ -1,0 +1,238 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  
+  /* Body Styling */
+  body {
+    background-color: #f4f6f8;
+    display: flex;
+    flex-direction: column; /* Important: column to stack navbar + content */
+    align-items: center;
+    min-height: 100vh;
+    font-size: 20px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #4b6cb7, #182848); /* Smooth gradient */
+    color: white;
+    padding: 1rem 2rem;
+    font-family: 'Josefin Sans', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links li a:hover {
+    color: #ffcc00; /* gold on hover */
+  }
+  
+  /* Login Container */
+  .login-container {
+    background: white;
+    padding: 40px 30px ;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-bottom:60px;
+  }
+
+  .login-form h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .login-form p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Inputs */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.2);
+  }
+  
+  /* Login Button */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0077cc;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Links (forgot password & create account) */
+  .links {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .links a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  .links span {
+    color: #aaa;
+    margin: 0 5px;
+  }
+  
+  /* Remove unnecessary unused classes */
+/* Footer styles */
+.footer {
+    width: 100%;
+    background-color: #182848; /* Matches the darker side of navbar gradient */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto; /* Push footer to bottom if needed */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+  }
+  
+  .footer-links li a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .footer-links li a:hover {
+    color: #ffcc00; /* Same golden hover */
+  }
+  .error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .menu-toggle {
+display: none;
+font-size: 28px;
+cursor: pointer;
+z-index: 1100;
+}
+
+.navbar-menu {
+display: none;
+width: 30%;
+flex-direction: column;
+position: absolute;
+top: 100%;
+right: 2rem;
+background-color: #182848;
+padding: 1rem;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+z-index: 1000;
+}
+
+.navbar-menu a {
+color: white;
+text-decoration: none;
+text-align: center;
+font-size: 18px;
+padding: 0.5rem 0;
+}
+
+.navbar-menu a:hover {
+color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+.navbar-links {
+  display: none;
+}
+
+.menu-toggle {
+  display: block;
+}
+
+.navbar-menu.show {
+  display: flex;
+}
+}
+ /*home page*/
+ 

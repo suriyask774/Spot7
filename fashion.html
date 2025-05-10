@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spot7 - Fashion</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo2.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="categories.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">Spot7 - <span class="titlepage">Fashion</span></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="navbar-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  
+    <!-- 🟢 Move the menu here INSIDE the navbar -->
+    <div class="navbar-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+  
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search cloths...." onkeyup="filterProducts()"  style="font-family: 'josefin Sans',sans-serif;"/>
+  </section>
+
+  <section class="product-grid" id="productGrid">
+    <div class="product-card" data-name="red top">
+      <img src="assets/model13.jpg" alt="red top" />
+      <h3>Red top size:40</h3>
+      <p>₹2000</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="dark green top">
+      <img src="assets/model14.jpg" alt="dark green top" />
+      <h3>Dark green top for girl kid size:10</h3>
+      <p>₹500</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="yellow robe">
+      <img src="assets/model15.jpg" alt="yellow robe" />
+      <h3>yellow robe for girls size:40</h3>
+      <p>₹2200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Bride dress">
+      <img src="assets/model16.jpg" alt="Bride dress" />
+      <h3>Bride dress for girls size:34</h3>
+      <p>₹5200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="black top">
+      <img src="assets/model17.jpg" alt="black top" />
+      <h3>Black top with court size:38</h3>
+      <p>₹1999</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="balmain shirt">
+      <img src="assets/model18.jpg" alt="balmain shirt" />
+      <h3>Balmain shirt for boys size:38</h3>
+      <p>₹3200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="balmain shirt">
+      <img src="assets/model19.jpg" alt="balmain shirt" />
+      <h3>Balmain shirt for boys size:40</h3>
+      <p>₹3500</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Green shirts for twin boys size:28">
+      <img src="assets/model20.jpg" alt="Green shirts for twin boys size:28" />
+      <h3>Green shirts for twin boys size:28</h3>
+      <p>₹1200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Court and shirt with pant">
+      <img src="assets/model21.jpg" alt="Court and shirt with pant" />
+      <h3>Court and shirt with pant for boys size:40</h3>
+      <p>₹7200</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Pink dress">
+      <img src="assets/model2.jpg" alt="Pink dress" />
+      <h3>Pink dress size:38</h3>
+      <p>₹1600</p>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+  <div class="brand-container">
+    <div class="brand">
+      <p>&copy; Spot7 Inc.</p>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Spot7. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="categories.js"></script>
+</body>
+</html>

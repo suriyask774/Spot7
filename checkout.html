@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout - Spot7</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo2.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link href="checkout.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">Spot7</div>
+    <div class="navbar-links">
+      <a href="home.html">Home</a>
+      <a href="cart.html">Cart</a>
+    </div>
+  </nav>
+
+  <section class="checkout-section">
+    <h1>Checkout Bill</h1>
+
+    <!-- Cart Summary -->
+    <div id="cart-summary">
+      <!-- Cart items will appear here -->
+    </div>
+
+    <!-- Client Details Form -->
+    <form action="https://formspree.io/f/xanoqnay" method="POST" id="checkout-form">
+      <h2>Shipping Details</h2>
+              <h1 style="font-size: small;">* Only cash on delivery available</h1>
+      <input type="text" name="Full Name" placeholder="Full Name" required>
+      <input type="email" name="Email" placeholder="Email" required>
+      <input type="text" name="Mobile Number" placeholder="Mobile Number" required>
+      <textarea name="Address" placeholder="Address" required></textarea>
+      <input type="text" name="Landmark" placeholder="Landmark" required>
+      <input type="text" name="City" placeholder="City" required>
+    
+      <!-- Hidden field to store cart details -->
+      <input type="hidden" name="Cart Details" id="cart-details">
+    
+      <button type="submit">Place Order</button>
+    </form>
+    
+  </section>
+
+  <script>
+    // Load Cart Products
+    function loadCartSummary() {
+      const cartSummary = document.getElementById('cart-summary');
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      if (cart.length === 0) {
+        cartSummary.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+      }
+
+      let totalAmount = 0;
+      let html = '<h2>Order Summary</h2><ul>';
+
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        totalAmount += subtotal;
+        html += `<li>${item.productName} (x${item.quantity}) - ₹${subtotal}</li>`;
+      });
+
+      html += `</ul><h3>Total: ₹${totalAmount}</h3>`;
+      cartSummary.innerHTML = html;
+    }
+
+    loadCartSummary();
+
+    // Before form submit, insert cart details
+   // Before form submit, insert cart details
+  
+  const form = document.getElementById('checkout-form');
+  const cartDetailsInput = document.getElementById('cart-details');
+
+  function loadCartSummary() {
+    const cartSummary = document.getElementById('cart-summary');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+      cartSummary.innerHTML = "<p>Your cart is empty.</p>";
+      return;
+    }
+
+    let totalAmount = 0;
+    let html = '<h2>Order Summary</h2><ul>';
+
+    cart.forEach(item => {
+      const subtotal = item.price * item.quantity;
+      totalAmount += subtotal;
+      html += `<li>${item.productName} (x${item.quantity}) - ₹${subtotal}</li>`;
+    });
+
+    html += `</ul><h3>Total: ₹${totalAmount}</h3>`;
+    cartSummary.innerHTML = html;
+  }
+
+  loadCartSummary();
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Stop normal form submit
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalAmount = 0;
+    let cartText = cart.map(item => {
+      const subtotal = item.price * item.quantity;
+      totalAmount += subtotal;
+      return `${item.productName} (x${item.quantity}) - ₹${subtotal}`;
+    }).join('\n');
+
+    cartText += `\n\nTotal Amount: ₹${totalAmount}`;
+    cartDetailsInput.value = cartText;
+
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/xanoqnay', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        localStorage.removeItem('cart'); // Clear cart
+        window.location.href = 'thankyou.html'; // 🚀 Redirect to your Thank You page
+      } else {
+        alert('Oops! There was a problem placing your order.');
+      }
+    })
+    .catch(error => {
+      alert('Error submitting form. Please try again.');
+    });
+  });
+
+  </script>
+
+</body>
+</html>

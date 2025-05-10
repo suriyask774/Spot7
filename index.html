@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spot7 - Login</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo2.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">Spot7</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="navbar-links">
+      <li><a href="create.html">Create Account</a></li>
+      <li><a href="contactus.html">About us</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+    </ul>
+    <!-- 🟢 Move the menu here INSIDE the navbar -->
+     <div class="navbar-menu" id="mobileMenu">
+      <a href="create.html">Create Account</a>
+      <a href="contactus.html">About us</a>
+      <a href="contactus.html">Contactus</a>
+    </div>
+  </nav>
+
+  <div class="login-container">
+    <form id="loginForm" class="login-form">
+      <h2 class="titlelog">Welcome Back to Spot7</h2>
+      <p>Please sign in to your account</p>
+
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+      </div>
+
+      <div class="error-message" id="error" style="color: red; margin-top: 10px;"></div>
+
+      <button type="submit">Login</button>
+
+      <div class="links">
+        <a href="forget.html">Forgot password?</a>
+        <span>|</span>
+        <a href="create.html">Create account</a>
+      </div>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Spot7. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const errorDiv = document.getElementById('error');
+
+      // Get users
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+
+      // Find matching user
+      const matchedUser = users.find(user => user.email === email && user.password === password);
+
+      if (matchedUser) {
+        errorDiv.textContent = "";
+      
+        window.location.href = 'home.html'; // Redirect to home page after login
+      } else {
+        errorDiv.textContent = "Incorrect email or password!";
+      }
+    });
+    
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function (event) {
+    const menu = document.getElementById('mobileMenu');
+    const toggle = document.querySelector('.menu-toggle');
+
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+      menu.classList.remove('show');
+    }
+  });
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+  }
+  </script>
+
+</body>
+</html>
